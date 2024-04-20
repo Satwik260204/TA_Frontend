@@ -1,0 +1,21 @@
+
+$color_type_0: rgba(255, 255, 255, 0);
+
+.root {
+  position: relative;
+  overflow: hidden;
+}
+.root1 {
+  aspect-ratio: 1.03;
+  vertical-align: top;
+  object-fit:cover;
+  object-position: right;
+  position: relative;
+  margin: 0px;
+  width: 100vw;
+}
+@media only screen and (max-width: 900px){
+  .root1{
+      display: none;
+  }
+}

@@ -1,0 +1,11 @@
+.table__head
+{
+    background-color: #3F51B5;
+
+}
+
+.table__head .table__cell
+{
+    color: white;
+    font-size: medium;
+}

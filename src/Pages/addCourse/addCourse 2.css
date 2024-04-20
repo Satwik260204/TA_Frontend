@@ -1,0 +1,19 @@
+.ta__container
+{
+    padding: 30px;
+    margin: 20px;
+}
+
+.ta__form
+{
+    margin-top: 20px;
+}
+.text {
+    height: 2.5rem;
+    width: 113.56rem;
+    font-size: medium
+
+}
+.option {
+   font-size: medium;
+}

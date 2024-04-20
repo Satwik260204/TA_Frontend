@@ -1,0 +1,9 @@
+.logIn button
+{
+    padding: 12px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    width: 118px;
+    font-weight: 700;
+}

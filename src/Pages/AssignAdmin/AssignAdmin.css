@@ -1,0 +1,8 @@
+.assignAdmin__container{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    gap: 10px;
+}

@@ -1,0 +1,29 @@
+.ta__container
+{
+    padding: 30px;
+    margin: 20px;
+}
+
+.ta__form
+{
+    margin-top: 20px;
+}
+
+.ta__delete_form
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.ta__delete_container
+{
+    margin-top: 20px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; */
+    
+}
