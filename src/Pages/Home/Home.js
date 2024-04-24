@@ -55,15 +55,16 @@ const Home = () => {
         const res = await axios.get("http://localhost:4000/students", {
           headers: headers,
         });
-        // const res3=await.axios.get("http://localhost:4000/algorithm",{
+        // const res3=await axios.get("http://localhost:4000/algorithm",{
         //   headers:headers,
         // });
+        
 
-        //console.log(res.data.data);
+        
 
         setStudentData(res.data.data);
       } catch (e) {
-        console.log(e);
+        console.log(e.message);
       }
     };
 

@@ -18,12 +18,17 @@ import CheckModal from "../../Components/CheckModal";
 import { toast } from "react-toastify";
 import { ColorRing } from "react-loader-spinner";
 
+
 const PhaseControl = () => {
   const [phase1, setPh1] = useState();
   const [phase2, setPh2] = useState();
   const [phase3, setPh3] = useState();
-
+  let token = secureLocalStorage.getItem("token");
+      const headers = {
+        authorization: `${token}`,
+      };
   useEffect(() => {
+    
     setPh1(secureLocalStorage.getItem("ph1"));
     // console.log(secureLocalStorage.getItem("ph1"));
     setPh2(secureLocalStorage.getItem("ph2"));
@@ -278,6 +283,54 @@ const PhaseControl = () => {
       });
     }
   };
+  const allocationHandler=async () =>{
+    try {
+      
+      const res=await axios.get("http://localhost:4000/algorithm",{
+        headers:headers,
+      });
+      toast.success(`${res.data.message}`, {
+        position: "top-center",
+        autoClose: 200,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (e) {
+      console.log(e.message);
+      toast.error(`${e.response.data.message}`, {
+        position: "top-center",
+        autoClose: 200,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
+  let navigate = useNavigate(); 
+  const routeChange =async (e) =>{
+    e.preventDefault();
+    try {
+      const link = document.createElement("a");
+      link.href = "http://localhost:4000/finalalloc";
+      // link.setAttribute("download", `Faculty.xlsx`);
+
+      // document.body.appendChild(link);
+
+      link.click();
+
+      // link.parentNode.removeChild(link);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <motion.div
@@ -377,6 +430,26 @@ const PhaseControl = () => {
             End Faculty Phase
           </Button>
         )}
+        <Typography variant="h4" gutterBottom>
+            To Start Allocation 
+        </Typography>
+        <Button
+            variant="contained"
+            onClick={allocationHandler}
+            sx={{ marginTop: 1 ,marginBottom:3, backgroundColor: "#3F51B5" }}
+          >
+           Start Allocation
+        </Button>
+        <Typography variant="h4" gutterBottom>
+            To Download Allocation CSV file 
+        </Typography>
+        <Button
+            variant="contained"
+            onClick={routeChange}
+            sx={{ marginTop: 1 ,marginBottom:3, backgroundColor: "#3F51B5" }}
+          >
+            Download
+        </Button>
       </div>
     </motion.div>
   );
