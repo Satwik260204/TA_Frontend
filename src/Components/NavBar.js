@@ -179,6 +179,18 @@ function NavBar() {
         ) : (
           <></>
         )}
+        {secureLocalStorage.getItem("isLoggedin") &&
+        (secureLocalStorage.getItem("role") === "admin" ||
+          secureLocalStorage.getItem("role") === "super_admin") ? (
+          <li className="navigation">
+            <NavLink className="link" to="/tools" activeClassName="active">
+              Tools
+            </NavLink>
+          </li>
+        ) : (
+          <></>
+        )}
+        
 
         {!auth.user && (
           <li className="navigation">

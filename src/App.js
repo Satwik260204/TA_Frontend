@@ -21,6 +21,7 @@ import StudentHome from "./Pages/Home/StudentHome";
 import ApplyTA  from "./Pages/applyTa/applyTa";
 import PhaseControl from "./Pages/phaseControl/phase";
 import { useEffect, useState } from "react";
+import Other from "./Pages/other/other";
 function App() {
   const location = useLocation();
   const role= secureLocalStorage.getItem("role");
@@ -153,6 +154,14 @@ function App() {
               </RequireAuth>
             }
             path="/phase"
+            />
+            <Route
+            element={
+              <RequireAuth role="super_admin">
+                <Other></Other>
+              </RequireAuth>
+            }
+            path="/tools"
             />
           
 
