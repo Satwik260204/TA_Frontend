@@ -202,8 +202,8 @@ Now open a web browser and go to the url [http://localhost:4000](http://localhos
 
 ## Authors
 
-- **Prathamesh Jondhale** -[RGLxAkuma](https://github.com/RGLxAkuma)
-- **Himanshu Kumar** -[Himanshukr033](https://github.com/Himanshukr033)
+- **Govardanam Satwik** -[Satwik260204](https://github.com/Satwik260204)
+- **Voodam Sai Kumar Reddy** -[powercorp1](https://github.com/powercorp1)
 
 ## Acknowledgments
 
