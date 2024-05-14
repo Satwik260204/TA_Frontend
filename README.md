@@ -6,7 +6,7 @@ Backend Code - https://github.com/RGLxAkuma/TA-Allocation-Portal-Backend
 
 ## Workflow
 
-![App Screenshot](https://i.postimg.cc/htQmBSCn/TA-Allocation-Portal.png)
+![App Screenshot](https://i.postimg.cc/Qx8h33ps/Drawing2-Model.png)
 
 ### Installation
 
@@ -209,3 +209,5 @@ Now open a web browser and go to the url [http://localhost:4000](http://localhos
 
 - Dr. Albert Sunny
 - Dr. Anand T. N. C.
+- Prathamesh
+- Himanshu
