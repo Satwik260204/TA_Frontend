@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {
-  Link,
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+
 import secureLocalStorage from "react-secure-storage";
 import axios from "axios";
 import { useAuth } from "../../Utils/auth";
-import { Typography, Button, Backdrop } from "@mui/material";
+import { Typography, Backdrop } from "@mui/material";
 import CustomTable from "../../Components/CustomTable";
 import "./Home.css";
 import UnassignedStdTable from "../../Components/UnassignedStdTable";
@@ -27,13 +21,13 @@ const Home = () => {
   const [open, setOpen] = useState(false);
 
   const auth = useAuth();
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   // console.log(auth.freeze);
 
   useEffect(() => {
     const handleCourseData = async () => {
-      const facEmail = JSON.parse(secureLocalStorage.getItem("user")).email;
+     // const facEmail = JSON.parse(secureLocalStorage.getItem("user")).email;
       let token = secureLocalStorage.getItem("token");
       const headers = {
         authorization: `${token}`,
@@ -75,45 +69,45 @@ const Home = () => {
     setChkOpen(opt);
   };
 
-  const unfreeszeAllHandler = async () => {
-    setChkOpen(false);
-    setOpen(true);
-    let token = secureLocalStorage.getItem("token");
-    const headers = {
-      authorization: `${token}`,
-    };
-    try {
-      const res = await axios.get("http://localhost:4000/unfreezeAll", {
-        headers: headers,
-      });
-      console.log(res);
-      secureLocalStorage.setItem("freeze", false);
-      auth.setFreeze(false);
-      toast.success(`${res.data.message}`, {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    } catch (error) {
-      console.log(error);
-      toast.error(`${error.response.data.message}`, {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
-    setOpen(false);
-  };
+  // const unfreeszeAllHandler = async () => {
+  //   setChkOpen(false);
+  //   setOpen(true);
+  //   let token = secureLocalStorage.getItem("token");
+  //   const headers = {
+  //     authorization: `${token}`,
+  //   };
+  //   try {
+  //     const res = await axios.get("http://localhost:4000/unfreezeAll", {
+  //       headers: headers,
+  //     });
+  //     console.log(res);
+  //     secureLocalStorage.setItem("freeze", false);
+  //     auth.setFreeze(false);
+  //     toast.success(`${res.data.message}`, {
+  //       position: "top-center",
+  //       autoClose: 1000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: "light",
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     toast.error(`${error.response.data.message}`, {
+  //       position: "top-center",
+  //       autoClose: 1000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       theme: "light",
+  //     });
+  //   }
+  //   setOpen(false);
+  // };
 
   const freeszeAllHandler = async () => {
     setChkOpen(false);
@@ -170,7 +164,7 @@ const Home = () => {
         Unassigned Student List
       </Typography>
       <UnassignedStdTable studentData={studentData}></UnassignedStdTable>
-      {secureLocalStorage.getItem("role") == "super_admin" && (
+      {/* {secureLocalStorage.getItem("role") == "super_admin" && (
         <div>
           <Typography sx={{ marginTop: 2 }}>
             To {secureLocalStorage.getItem("freeze") ? "Unfreeze" : "Freeze"}{" "}
@@ -198,7 +192,7 @@ const Home = () => {
             </Button>
           )}
         </div>
-      )}
+      )} */}
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={open}

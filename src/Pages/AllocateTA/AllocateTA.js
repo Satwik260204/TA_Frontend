@@ -56,9 +56,17 @@ const AllocateTA = () => {
             value: i.name,
             label: i.name,
           };
+          let sts=[];
+          for(let j of i.appliedStudents){
+            if(j.number!==-1)
+            sts.push([j.student,j.number]);
+            else{
+              sts.push([j.student,"did not apply"]);
+            }
+          }
           let temp1={
             course:i.name,
-            student:i.appliedStudents,
+            student:sts,
           }
           appliedStudents.push(temp1);
           courseData.push(temp);
@@ -120,14 +128,14 @@ const AllocateTA = () => {
     let temp= studentData.find((item)=>{
       return item.course===selectedOption.value;
     });
-    console.log("hello");
+
     let temp1=temp.student;
-    console.log(temp);
+
     let y=[];
     for(let i of temp1){
       let x={
-        value:`${i.name}` + `(${i.rollNumber})`,
-        label:`${i.name}` + `(${i.rollNumber})`,
+        value:`${i[0].name}` + `(${i[0].rollNumber})`,
+        label:`${i[0].name}` + `(${i[0].rollNumber})`+`(${i[1]})`,
       }
       y.push(x);
     }

@@ -1,14 +1,10 @@
 import React from "react";
-import { useState } from "react";
 import { Button } from "@mui/material";
 import { Backdrop } from "@mui/material";
-import { CircularProgress } from "@mui/material";
-import secureLocalStorage from "react-secure-storage";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ColorRing } from "react-loader-spinner";
+
 import { Typography } from "@mui/material";
-import { motion } from "framer-motion";
+
 
 const CheckModal = (props) => {
   return (

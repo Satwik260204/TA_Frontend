@@ -101,6 +101,14 @@ function App() {
           />
           <Route
             element={
+              <RequireAuth role="super_admin">
+                <Other></Other>
+              </RequireAuth>
+            }
+            path="/tools"
+          />
+          <Route
+            element={
               <RequireAuth role="admin,super_admin">
                 <FacultyInfo></FacultyInfo>
               </RequireAuth>
@@ -154,14 +162,6 @@ function App() {
               </RequireAuth>
             }
             path="/phase"
-            />
-            <Route
-            element={
-              <RequireAuth role="super_admin">
-                <Other></Other>
-              </RequireAuth>
-            }
-            path="/tools"
             />
           
 
