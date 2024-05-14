@@ -202,7 +202,7 @@ Now open a web browser and go to the url [http://localhost:4000](http://localhos
 
 ## Authors
 
-- **Voodam Sai Kumar Reddy**
+- **Voodam Sai Kumar Reddy**-[powercorp1](https://github.com/powercorp1)
 - **Govardanam Satwik** -[Satwik260204](https://github.com/Satwik260204)
 
 ## Acknowledgments
