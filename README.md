@@ -8,7 +8,7 @@ Backend Code - https://github.com/Satwik260204/TA_Backend
 ### Installation
 
 Install the following step by step in order to get a development environment up and running.
-<img width="760" alt="Screenshot 2024-03-10 at 1 13 21 PM" src="https://github.com/Satwik260204/TA_Frontend/assets/121714021/f4b7176c-6a29-4d66-bb56-d1ddb6d0b268">
+
 
 #### 1. Node.js
 
