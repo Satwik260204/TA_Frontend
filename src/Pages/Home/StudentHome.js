@@ -28,7 +28,7 @@ const StudentHome =  () => {
 
   const auth = useAuth();
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     const handleCourseData = async () => {
 
@@ -37,15 +37,19 @@ const StudentHome =  () => {
       const headers = {
         authorization: `${token}`,
       };
-     
+      console.log("yyyyy");
       try {
         const res = await axios.get("http://localhost:4000/applicantcourses", {
           headers: headers,
         });
         
         setCourseData(res.data.data);
-        setAppliedCourses(res.data.data2.preferences);
-        // console.log(res.data.data2.preferences);
+        let crs=[];
+        for(let i of res.data.data2.preferences){
+          crs.push(i.course);
+        }
+        setAppliedCourses(crs);
+        console.log(crs);
       } catch (e) {
         console.log(e);
       }

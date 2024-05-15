@@ -190,7 +190,6 @@ function NavBar() {
         ) : (
           <></>
         )}
-        
 
         {!auth.user && (
           <li className="navigation">
