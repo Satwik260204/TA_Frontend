@@ -4,6 +4,9 @@ TA Allocation Web Application for University using MERN Stack. Super Admin can a
 
 Backend Code - https://github.com/Satwik260204/TA_Backend
 
+# Workflow
+
+![Screenshot from 2024-05-15 04-32-26](https://github.com/Satwik260204/TA_Frontend/assets/121714021/9ac9ccc5-2ba5-42b0-b87d-b1a56a04db9e)
 
 ### Installation
 
